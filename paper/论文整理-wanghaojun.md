@@ -54,17 +54,7 @@ https://www.usenix.org/conference/atc20/presentation/zhang-chengliang
 
 ## SMC
 
-#### Practical Secure Aggregation for Federated Learning on User-Held Data 
-
 #### Practical secure aggregation for privacy-preserving machine learning
-
-#### Scalable and Differentially Private Distributed Aggregation in the Shuffled Model
-
-B. Ghazi, R. Pagh, and A. Velingker. Scalable and differentially private distributed aggregation in the shuffled model. arXiv preprint arXiv:1906.08320, 2019.
-
-https://arxiv.org/abs/1906.08320
-
-联合学习通过使用安全聚合方法实现梯度下降，有望使机器学习在分布式私有数据集上可行。这个想法是在不透露单个用户贡献的情况下计算全局权重更新。当前用于安全聚合的实用协议在“诚实但好奇”的环境中工作，其中假设服务器诚实并遵循该协议，观察到服务器的所有来往的好奇对手无法学习任何私人信息。用于隐私保护协议的更具可伸缩性和鲁棒性的原语是用户数据的改组，以便隐藏每个数据项的来源。 Bittau等人在Encode-Shuffle-Analyze框架中提出了一种用于混洗的高度可扩展且安全的协议，即所谓的混合网，作为隐私保护分析的原始方法，后来由Erlingsson等人进行了分析研究。 Cheu等人和Balle等人最近的论文。给出了用于安全聚合的协议，该协议在此“混洗模型”中实现了不同的隐私保证。但是，它们的协议要付出一定的代价：预期的聚合错误或每位用户的通信量会随着用户数$ n $的多项式$ n ^ {\ Omega（1）} $扩展。在本文中，我们提出了一种简单有效的协议，用于在改组后的模型中进行聚合，其中通信和错误仅在$ n $中对数增加。我们的新技术是概念上的“隐形斗篷”，它使用户的数据与随机噪声几乎无法区分，同时对总和引入零失真。
 
 #### Privacy preserving regression modelling via distributed computation
 
@@ -76,7 +66,11 @@ https://dl.acm.org/doi/10.1145/1014052.1014139
 
 ps：看摘要，有点像跨组织的纵向联邦学习，所以尽管2004年的 我也放上了
 
+从多个分布式数据库上进行统计分析（线性回归），同时保证数据的机密性。
 
+考虑两种情况，纵向分割的数据和横向分割的数据（联邦学习中的横向和纵向数据划分），这篇文章只考虑了如何对垂直数据分区进行安全的线性回归。
+
+我们认为，一组寻求对其数据进行综合分析的政府机构可以很好地反映我们所处理的半诚实数据共享方案。因此，即使在某些情况下他们可能是公司或其他数据持有人，我们也将其称为参与者“代理商”。在第二部分中，我们概述了隐私保护回归问题。在第3节中，对Powell的数值最小化方法和安全求和协议进行了简要说明，它们共同构成了我们程序的组成部分。第4节描述了主要算法，第5节讨论了使用该程序揭示的内容以及各机构共同学习的内容（包括进行回归分析的可能途径）。最后，我们在第6节作总结。
 
 #### SMSS: Secure Member Selection Strategy in Federated Learning
 
@@ -87,6 +81,14 @@ https://ieeexplore.ieee.org/document/9136885
 ps：一篇用于联邦学习中选择参与成员的论文，混合方案，我看到了sham
 
 ## DP
+
+#### Scalable and Differentially Private Distributed Aggregation in the Shuffled Model
+
+B. Ghazi, R. Pagh, and A. Velingker. Scalable and differentially private distributed aggregation in the shuffled model. arXiv preprint arXiv:1906.08320, 2019.
+
+https://arxiv.org/abs/1906.08320
+
+联合学习通过使用安全聚合方法实现梯度下降，有望使机器学习在分布式私有数据集上可行。这个想法是在不透露单个用户贡献的情况下计算全局权重更新。当前用于安全聚合的实用协议在“诚实但好奇”的环境中工作，其中假设服务器诚实并遵循该协议，观察到服务器的所有来往的好奇对手无法学习任何私人信息。用于隐私保护协议的更具可伸缩性和鲁棒性的原语是用户数据的改组，以便隐藏每个数据项的来源。 Bittau等人在Encode-Shuffle-Analyze框架中提出了一种用于混洗的高度可扩展且安全的协议，即所谓的混合网，作为隐私保护分析的原始方法，后来由Erlingsson等人进行了分析研究。 Cheu等人和Balle等人最近的论文。给出了用于安全聚合的协议，该协议在此“混洗模型”中实现了不同的隐私保证。但是，它们的协议要付出一定的代价：预期的聚合错误或每位用户的通信量会随着用户数$ n $的多项式$ n ^ {\ Omega（1）} $扩展。在本文中，我们提出了一种简单有效的协议，用于在改组后的模型中进行聚合，其中通信和错误仅在$ n $中对数增加。我们的新技术是概念上的“隐形斗篷”，它使用户的数据与随机噪声几乎无法区分，同时对总和引入零失真。
 
 #### Protection Against Reconstruction and Its Applications in Private Federated Learning
 
@@ -148,7 +150,9 @@ https://www.sciencedirect.com/science/article/abs/pii/S0020025520301201
 
 在敏感的真实世界数据上训练的机器学习模型有望改善从医学筛查到疾病暴发发现的一切。在许多应用领域中，学习参与者将受益于合并他们的私有数据集，在汇总数据上训练精确的机器学习模型以及共享使用这些模型的收益。考虑到隐私和安全问题通常会阻止参与者提供敏感数据进行培训，因此研究人员提出了几种在联合学习系统中实现数据隐私的技术。但是，这样的技术容易受到因果攻击的攻击，从而恶意参与者可能注入虚假的训练结果，从而破坏了良好学习的模型。为此，在本文中，我们提出了一种新的保护隐私的联合学习方案，该方案可以保证深度学习过程的完整性。基于可信执行环境（TEE），我们为此方案设计了一个训练完整性协议，在其中可以检测到因果攻击。因此，迫使每个参与者正确地执行该方案的隐私保护学习算法。我们通过原型实现来评估我们的方案的性能。实验结果表明，该方案具有训练完整性和实用性。
 
-ps：好不容易找到篇可信执行环境的论文 下不下来 没有免费的 在线看一下摘要和介绍吧
+#### Glimmers: Resolving the Privacy/Trust Quagmire
+
+来自李锐
 
 ## Other & Hybrid
 
