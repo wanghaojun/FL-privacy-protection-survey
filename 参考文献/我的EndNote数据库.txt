@@ -1,0 +1,1 @@
+﻿Sabater, C., Bellet, A., & Ramon, J. (2020). Distributed Differentially Private Averaging with Improved Utility and Robustness to Malicious Parties. arXiv:2006.07218. Retrieved from https://ui.adsabs.harvard.edu/abs/2020arXiv200607218S
